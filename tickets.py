@@ -45,4 +45,5 @@ def display_results():
     pause
 ########## call on main program to execute ############
 main()
+pause(60)
 
