@@ -1,5 +1,5 @@
-#   Name: Sarah Knipp
-#   Prog Purpose: This program finds the cost of movie tickets
+# Name: Sarah Knipp
+# Prog Purpose: This program finds the cost of movie tickets
 #   Price for one ticket: $10.99
 #   Sales tax rate: 5.5%
 
@@ -10,7 +10,7 @@ import datetime
 SALES_TAX_RATE = .055
 PR_Ticket = 10.99
 
-# Define global variables
+# define global variables
 num_tickets = 0
 subtotal = 0
 sales_tax = 0
@@ -24,7 +24,7 @@ def main():
 
 def get_user_data():
     global num_tickets
-    num_tickets - int(input("Number of movie tickets: "))
+    num_tickets = int(input("Number of movie tickets: "))
 
 def perform_calculations():
     global subtotal, sales_tax, total
@@ -43,5 +43,5 @@ def display_results():
     print('-------------------------------')
     print(str(datetime.datetime.now()))
 
-    ########## call on main program to execute ############
-    main()
+########## call on main program to execute ############
+main()
