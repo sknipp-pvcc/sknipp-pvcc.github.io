@@ -45,5 +45,5 @@ def display_results():
     pause
 ########## call on main program to execute ############
 main()
-sleep(60)
+input('Press ENTER to exit')
 
