@@ -42,8 +42,7 @@ def display_results():
     print('Total        $ ' + str(total))
     print('-------------------------------')
     print(str(datetime.datetime.now()))
-    pause
+
 ########## call on main program to execute ############
 main()
-input('Press ENTER to exit')
-
+input('Press Enter to exit')
