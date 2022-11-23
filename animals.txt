@@ -1,0 +1,9 @@
+dog 
+cat 
+lion 
+tiger 
+elephant 
+giraffe 
+panda 
+cheetah 
+bear 
