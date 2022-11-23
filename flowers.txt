@@ -1,0 +1,10 @@
+petunia
+begonia
+rose
+aster
+azalea
+wistera
+lily
+tulip
+carnation
+geranium
