@@ -1,0 +1,13 @@
+blue
+red
+green
+pink
+violet
+indigo
+yellow
+silver
+white
+black
+beige
+grey
+brown
