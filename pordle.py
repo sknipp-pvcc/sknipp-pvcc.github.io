@@ -28,10 +28,10 @@ def main():
             break
 
 def printHeadings():
-    print("n\Welcome to Pordle! The PVCC Wordle Game!")
+    print("Welcome to Pordle! The PVCC Wordle Game!")
     print("I will think of a word and you try to guess the lettes in the word.")
     print("The number of dashes indicates the number of letterrs in the word.")
-    print("\nGet ready for a new word....")
+    print("Get ready for a new word....")
 
 def printMenu():
     global inFile
