@@ -15,7 +15,7 @@ pay_rate = 0
 def get_employee_data():
     global hours, job_cat
     hours = int(input("How many hours has employee worked?:   "))
-    job_cat = str(input("What is your job category? C: Cashier, J: Janitor, S: Stoker, M: Mainenance"))
+    job_cat = str(input("What is your job category? C: Cashier, J: Janitor, S: Stocker, M: Mainenance"))
     
 def perform_calculations():
     global pay_rate, gross_pay, net_pay, total_deductions, fed_tax, state_tax, ss_tax, medicare_tax
