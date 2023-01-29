@@ -6,118 +6,151 @@
 
 	
 
-		<body style="background-color:#1a1818;">
-
-
- 			 <head>
-				
-  				  <img src="banner 2.png" alt="Sarah Knipp Banner" align="center" width="900px">
-    
-<!--Add from in class-->
-
-				<style>
-					
-					body {background-color:#cdc8e0;
-						font-family:Georgia, 'Times New Roman', Times, serif ;
-						margin-top:0px;
-					}
-
-					h1 {color:#ffffff; 
-						font-size: 1.5em; 
-						margin-left: 3em;}
-					
-					ul {font-size: small; 
-						display:inline-block;
-						list-style-type: circle;
-						padding: 0;	
-					}
-
-				
-
-					
-
-					
-					a:link{color:#8030a0;}
-					a:visited{color:#4e0455;}
-					a:hover {color:#f72269}
-					a:active {color:#34013b;}
-
-					
-
-
-					table {width:900px; 
-						font-size:1.3em; 
-						font-weight: bold; 
-						background-color:rgb(67, 170, 234)
-						
-					}
-
-					td{width:200px; text-align: center;}
-
-				</style>
-
-<!--End of in class addition-->
-
- 
-  </head>
-  
-  		<body>
-  
 		
-			<table
+
+
+<head>
+	<img src="banner 2.png" alt="Sarah Knipp Banner" align="center" width="85%" margin-bottom = "0">
+	
+ 
+<body>
+	
+		
+	<table
 				
 				align="center" 
 				border="1"
 				cellpadding="5"
-				width="100%"
-				
+				width="80%"
+				>
 
 				
 				<tr>
-					<td align="center" ><a href="index.html">Home</a></td>
-					<td align="center" ><a href="https://www.pvcc.edu/">PVCC</a></td>
-					<td align="center" ><a href="http://www.w3schools.com/html/">W3 Schools</a></td>
-					<td align="center" ><a href="contactus.html">Contact Us</a></td>
+					
+					<td align="center" ><h3><a href="index.html">Home</a></td></h3>
+					<td align="center" ><h3><a href="https://www.pvcc.edu/">PVCC</a></td></h3>
+					<td align="center" ><h3><a href="http://www.w3schools.com/html/">W3 Schools</a></td></h3>
+					<td align="center" ><h3><a href="contactus.html">Contact Us</a></td></h3>
 				
 
 
 				</tr>
 				
 
-			</table>
+	</table>
 			
 
     
-    <h1>CSC 110 Web Pages</h1>
+	<style>
+
+	* {
+		box-sizing: border-box;
+		font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+	}
+
+	body {
+		background-image: url('purplebrickwall.png');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+					}
+	
+	a { color: White;
+	
+	}
+	
+	.row {
+	  margin-left:-5px;
+	  margin-right:-5px;
+	}
+	  
+	.column {
+	  float: left;
+	  width: 50%;
+	  padding: 5px;
+	}
+	
+	/* Clearfix (clear floats) */
+
+	.row::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
+	table {
+	 
+	border-spacing: 0;
+	width: 85%;
+	border: 3px solid rgb(247, 0, 144);
+	
+		
+	  
+
+	}
+	
+	th, td {
+	text-align: left;
+	padding: 16px;
+	text-align: left;
+	color: rgba(42, 38, 230, 0.74);
+	border: 1px dotted rgb(247, 0, 144);
+	
+	  
+
+	}
+
+	h1 {
+		text-align: center;
+		color: rgb(180, 12, 247);
+	}
+
+	h2 {
+		text-align: center;
+		color: rgb(153, 46, 253);
+
+	}
+
+	h3 {
+		text-align: center;
+		
+	}
+
+	
 	
 
-
-
-
-
-
-
-	<Table
-		border="1" 
-		cellpadding="30">
+	</style>
+	</head>
+	<body>
 	
+
+	
+	
+	<div class="row">
+	  <div class="column">
+		<table>
+		  <tr>
+			<h1>CSC 110 Projects</h1>
+			</tr>
 	<tr>
-	
-		<th><h3>HTML</h3></th>
-		<th><h3>JavaScript</h3></th>
-		<th><h3>Python</h3></th>
-		<th><h3>Special Projects</h3></th>
+		<td><h2>HTML</h2></td>
+		<td><h2>JavaScript</h2></td>
+		<td><h2>Python</h2></td>
 	</tr>
+		  
+
+
+
 	<tr>
 		<td> <a href = "faves.html"> My Favorite Things </a></td>
 		<td><a href = "arithmetic.html"> Arithmetic</a></td>
-		<td><a href = "tickets.py"> Tickets</a></td>
-		<td><a href = "knipp-CE-Project/main.html"> Obergefell v. Hodges</a></td>
+		<td><a href = "tuition.py"> Tuition Calculator</a></td>
 	</tr>
+		  
 	<tr>
 		<td><a href = "bagels.html"> Brownsville Bagels </a></td>
 		<td><a href = "buses.html"> How Many Buses? </a></td>
-		<td><a href = "tuition.py"> Tuition Calculator</a></td>
 		<td><a href = "pordle.py"> Pordle!</a>
 			<ul><li><a href = "colors.txt">Color List</a></li>
 				<li><a href = "animals.txt">Animal List</a></li>
@@ -125,52 +158,116 @@
 				<li><a href = "foods.txt">Food List</a></li>
 			</ul>
 		</td>
-	<tr></tr>
-		<td><a href = "githubinfo.html"> Git Hub Info </a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "dogs.py"> Dogs</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "planets.html"> Info on Solar System </a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "magic8.py"> Magic 8 Ball</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "opsys.html"> Chapter 3 Terms: Operating Systems </a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "topic.py"> Random Number Generator</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "network.html"> Chapter 4 Terms: Networking </a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "pizza.py"> Pizza</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "programming.html">Chapter 5 Terms: Programming</a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "payroll.py"> Fresh Foods Employee Weekly Pay</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "proglang.html">Chapter 6 Terms: Programming Languages</a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "grades.py">CSC 230 Grade Report Version 2</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td><a href = "software-eng.html">Chapter 7 Terms: Software Engineering</a></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "grades_file.py">CSC 230 Grade Report Version 3</a></td>
-		<td><!--Put yo whatever project here--></td>
-	<tr></tr>
-		<td></td>
-		<td><!--Put yo JS here--></td>
-		<td><a href = "grades_file.py">CSC 230 Grade Report Version 3</a></td>
-		<td><!--Put yo whatever project here--></td>
-		
-		
-		
 	</tr>
-	</Table>
+
 	
-  </body>
-</center> 
-</html>
+	<tr>
+		<td><a href = "githubinfo.html"> Git Hub Info </a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "tickets.py"> Tickets</a></td>
+	</tr>
+
+	<tr>
+		<td><a href = "planets.html"> Info on Solar System </a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "dogs.py"> Dogs</a></td>
+	</tr>
+
+	<tr>
+		<td><a href = "opsys.html"> Chapter 3 Terms: Operating Systems </a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "magic8.py"> Magic 8 Ball</a></td>
+	</tr>
+
+	<tr>
+		<td><a href = "network.html"> Chapter 4 Terms: Networking </a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "topic.py"> Random Number Generator</a></td>
+	</tr>
+
+	<tr>
+		<td><a href = "programming.html">Chapter 5 Terms: Programming</a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "pizza.py"> Pizza</a></td>
+	</tr>
+
+	<tr>
+		<td><a href = "proglang.html">Chapter 6 Terms: Programming Languages</a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "payroll.py"> Fresh Foods Employee Weekly Pay</a></td>
+	</tr>
+
+		<tr>
+		<td><a href = "software-eng.html">Chapter 7 Terms: Software Engineering</a></td>
+		<td>JavaScript Project</td>
+		<td><a href = "grades.py">CSC 230 Grade Report Version 2</a></td>
+
+	</tr>
+
+	<tr>
+		<td>HTML Project</td>
+		<td>JavaScript Project</td>
+		<td><a href = "grades_file.py">CSC 230 Grade Report Version 3</a></td>
+
+	</tr>
+
+
+
+
+		</table>
+	  </div>
+	  
+	 
+	 
+	 
+	 <!--Python Class table-->
+	 
+	  <div class="column">
+		<table>
+		<tr>
+			<h1>ITP 150 Python Projects</h1>
+			</tr>
+		<tr>
+			<td><h2>Week</h2></td>
+			<td><h2>Assignment</h2></td>
+		</tr>
+
+		<tr>
+			<td>Week 1</td>
+			<td><a href = "PythonWeek1.py">Questions</a></td>
+			
+		</tr>
+		<tr>
+			<td>Week 2</td>
+			<td>
+				<ul><li><a href = "Week 2 1-6.py">Questions 1-6</a></li>
+					<li><a href = "Week 2 P1.py">Area of Shapes</a></li>
+					<li><a href = "Week 2 p2.py">Very Useless Clock</a></li>
+				</ul>
+			</td>
+			
+		</tr>
+		<tr>
+			<td>Week 3</td>
+			<td>
+				<ul>
+					<li><a href = "Week 3 p1.py">Bulk Invites</a></li>
+					<li><a href = "Week 3 1-5.py">Questions 1-5</a></li>
+					<li><a href = "Week 3 6.py">Turtles Drawing Shapes in Grass</a></li>
+					<li><a href = "Week 3 Q12.py">Turtle Clock</a></li>
+					<li><a href = "Week 3 Q13.py">Turtle (Type)</a></li>
+					<li><a href = "Week 3 Initials.py">Turtle Drawing Initials</a></li>
+					
+				</ul>
+			</td>
+			
+		</tr>
+		</table>
+	  </div>
+	</div>
+	
+	</body>
+	</html>
+	
+
+	
