@@ -1,14 +1,534 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Sets character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes page responsive -->
-  <title>Resume</title> <!-- Page title -->
-<style></style>
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      line-height: 1.6;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+
+
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    nav {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .sidebar {
+      background-color: white;
+      color: black;
+      width: 200px;
+      min-height: 100vh;
+      padding: 20rem 1rem 2rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      animation: scrollFade 2s ease-out forwards;
+      z-index: 1;
+    }
+
+    .sidebar a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 1rem;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 20rem 2rem 2rem 2rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      color: #0af;
+      border-bottom: 2px solid #0af;
+      padding-bottom: 0.5rem;
+    }
+
+    .experience-item p {
+      margin: 0.25rem 0; /* Tighten vertical spacing */
+      padding: 0;         /* Remove any default padding */
+      line-height: 1.4;   /* Slightly reduce line height */
+    }
+
+
+    .experience-item .label {
+      font-weight: bold;
+      color: #0af;
+      font-size: 1.1rem;
+    }
+
+    .experience-item ul {
+      margin: 0.5rem 0 1rem 1rem;
+    }
+
+    .skills-list {
+      color: #ffb100;
+    }
+
+    .education-column ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #ffb100;
+  font-size: 0.85rem; /* Smaller font size */
+}
+
+
+    button {
+      background-color: #0af;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+   .profile-pic {
+  width: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid rgb(28, 20, 20);
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  opacity: 0;
+  z-index: 10;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+
+    .name-line {
+      position: absolute;
+      top: 35%;
+      left: 180px;
+      height: 2px;
+      width: 0;
+      background: white;
+      animation: drawLine 1.5s ease-out forwards 2s;
+      z-index: 2;
+    }
+
+    .name-text {
+      position: absolute;
+      top: 15%;
+      left: 40%;
+      font-size: 7rem;
+      white-space: nowrap;
+      opacity: 0;
+      animation: slideInText 1s ease-out forwards 3.5s;
+      z-index: 2;
+      font-family: 'Mea Culpa', cursive;
+
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes drawLine {
+      to { width: 70%; }
+    }
+
+   @keyframes slideInText {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+    @keyframes scrollFade {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        padding: 30rem 1rem 2rem 1rem;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 30rem 1rem 2rem 1rem;
+      }
+      .name-line {
+        left: 20px;
+        width: 90%;
+      }
+      .name-text {  
+        position: absolute;
+        top: 160px;
+        left: 40%; /* <-- change this */
+        font-size: 2rem;
+        white-space: nowrap;
+        opacity: 0;
+        animation: slideInText 1s ease-out forwards 3.5s;
+        z-index: 2;
+      }
+
+    }
   </style>
 </head>
 <body>
-    Resume Page Coming Soon!
+ <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/linkedinprofphoto.jpg" alt="Profile Picture" class="profile-pic" />
+  <div class="name-line"></div>
+  <div class="name-text">Sarah Knipp</div>
+
+  <div class="sidebar">
+    <a href="#about">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#honors">Honors & Groups</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#additional">Additional Credentials</a>
+    <a href="resume.pdf">Download PDF</a>
+  </div>
+
+  <div class="main-content">
+    <nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="technology.html">Tech Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+    <div id="about" class="section">
+      <h2>About Me</h2>
+      <p>I'm an entry-level IT professional with a strong foundation in cloud computing, networking, and database management - along with a background in operations, administration, and customer service. I bring a process-focused mindset, a people-first perspective, and a drive to learn and grow professionally.</p>
+    </div>
+
+
+
+<!--Copy and past this for each job from here-->
+    <div class="experience-item">
+  <p class="label">Company:</p>
+  <p><strong>VMDO Architects</strong></p>
+
+  <p class="label">Location:</p>
+  <p>Charlottesville, VA</p>
+
+  <p class="label">Dates:</p>
+  <p>Jan 2020 – May 2022</p>
+
+  <p class="label">Role:</p>
+  <p>Administrative Assistant</p>
+
+  <p class="label">Duties:</p>
+  <ul>
+      <li>-Managed accounts payable and processed reimbursable invoicing for 80+ employees</li>
+      <li>-Oversaw company-wide time tracking and staff expense reports using internal databases</li>
+      <li>-Arranged travel logistics for staff and consultants, including hotels, airfare, and transportation</li>
+      <li>-Planned and coordinated internal events, meetings, and firm-wide gatherings</li>
+      <li>-Maintained and updated databases to provide accessible reporting and operational metrics</li>
+      <li>-Handled logistics for marketing events, firm presentations, and client engagements</li>
+  </ul>
+
+
+
+  <p class="label" style="color: #ffb100;">Skills:</p>
+  <ul style="color: #ffb100;">
+    <li>Accounts Payable (AP)</li>
+    <li>Expense Management</li>
+    <li>Software (Teams, Deltek Ajera)</li>
+    <li>Time Tracking</li>
+    <li>Data Management</li>
+
+  </ul>
+</div>
+<!--To here-->
+<!--Copy and past this for each job from here-->
+    <div class="experience-item">
+  <p class="label">Company:</p>
+  <p><strong>VMDO Architects</strong></p>
+
+  <p class="label">Location:</p>
+  <p>Charlottesville, VA</p>
+
+  <p class="label">Dates:</p>
+  <p>May 2019 – Jan 2020</p>
+
+  <p class="label">Role:</p>
+  <p>Contract- Administrative Support</p>
+
+  <p class="label">Duties:</p>
+  <ul>
+    <li>-Organized and tracked staff expense reports for client billing and internal audits</li>
+    <li>-Compiled documentation for reimbursable invoicing and financial reporting</li>
+    <li>-Procured and maintained state licensure compliance for architects and the firm</li>
+    <li>-Supported travel arrangements for project teams and leadership</li>
+  </ul>
+
+  <p class="label" style="color: #ffb100;">New Skills Acquired:</p>
+  <ul style="color: #ffb100;">
+    <li>Client Billing and Invoicing</li>
+    <li>Expense Management</li>
+    <li>Travel Logistics</li>
+    <li>Documentation Management</li>
+  </ul>
+</div>
+<!--To here-->
+
+
+<!--Copy and past this for each job from here-->
+    <div class="experience-item">
+  <p class="label">Company:</p>
+  <p><strong>VMDO Architects</strong></p>
+
+  <p class="label">Location:</p>
+  <p>Charlottesville, Va</p>
+
+  <p class="label">Dates:</p>
+  <p>Jun 2018 – May 2019</p>
+
+  <p class="label">Role:</p>
+  <p>Administrative Assistant</p>
+
+  <p class="label">Duties:</p>
+  <ul>
+  <li>-Managed travel bookings and meeting logistics, including catering and supplies</li>
+  <li>-Ordered and inventoried office, architectural, and janitorial supplies</li>
+  <li>-Handled front desk reception, phone systems, and visitor management</li>
+  <li>-Maintained daily office functions including mail handling and workspace upkeep</li>
+  </ul>
+
+  <p class="label" style="color: #ffb100;">Skills:</p>
+  <ul style="color: #ffb100;">
+    <li>Office Administration</li>
+    <li>Inventory Management</li>
+    <li>Vendor Relations</li>
+  </ul>
+</div>
+<!--To here-->
+<!--Copy and past this for each job from here-->
+    <div class="experience-item">
+  <p class="label">Company:</p>
+  <p><strong>Manpower</strong></p>
+
+  <p class="label">Location:</p>
+  <p>Crozet, Va</p>
+
+  <p class="label">Dates:</p>
+  <p>Jun 2018 – May 2019</p>
+
+  <p class="label">Temporary Role:</p>
+  <p>Music Today - Handpack</p>
+
+  <p class="label">Duties:</p>
+  <ul>
+  <li>Verified shipment accuracy by comparing physical goods with manifests and invoices</li>
+  <li>Routed materials to departments using hand trucks and sorting bins </li>
+  <li>Ensured packing compliance and proper handling procedures for outgoing items</li>
+  </ul>
+
+  <p class="label" style="color: #ffb100;">Skills:</p>
+  <ul style="color: #ffb100;">
+    <li>Speed</li>
+    <li>Accuracy</li>
+  </ul>
+
+  <p class="label">Location:</p>
+  <p>Gordonsville, Va</p>
+
+  <p class="label">Dates:</p>
+  <p>Dec 2017 – Apr 2018</p>
+
+  <p class="label">Temporary Role:</p>
+  <p>Printer</p>
+
+  <p class="label">Duties:</p>
+  <ul>
+  <li>Operated pressing machinery and monitored garment finishing for quality assurance</li>
+  <li>Adjusted digital files to modify print output (e.g., font, color, and layout adjustments)</li>  
+  <li>Conducted routine quality checks during print runs to ensure accuracy and consistency</li>
+  <li>Folded, packaged, and tagged finished articles for delivery</li>
+  <li>-Maintained production logs and followed job orders for batch output</li>
+  </ul>
+
+  <p class="label" style="color: #ffb100;">Skills:</p>
+  <ul style="color: #ffb100;">
+    <li>Quality Control</li>
+    <li>Shipping & Logistics</li>
+    <li>Lean Process Management</li>
+    <li>Attention to Detail</li>
+
+  </ul>
+  <!--Copy and past this for each job from here-->
+    <div class="experience-item">
+  <p class="label">Company:</p>
+  <p><strong>Various Companies- Private, Commercial, Veterinary</strong></p>
+
+  <p class="label">Location:</p>
+  <p>Various Locations, KY & NC</p>
+
+  <p class="label">Dates:</p>
+  <p>May 2010 – May 2017</p>
+
+  <p class="label">Roles:</p>
+  <p>Bather/ Groomer/ Salon Manager</p>
+
+  <p>Progressed from entry-level bather to salon manager across veterinary clinics, corporate pet stores (Petco, Petsense, PetSmart), and private grooming businesses. Led grooming teams, managed daily operations, and built lasting client relationships through professionalism, empathy, and quality care.</p>
  
+  <p class="label">Duties:</p>
+  <ul>
+    <li>Supervised grooming staff, conducted training, and managed schedules, performance, and team morale</li>
+    <li>Handled conflict resolution, hiring decisions, and disciplinary actions in alignment with workplace policy</li>
+    <li>Developed and implemented marketing strategies to attract and retain clientele</li>
+    <li>Balanced pricing and service quality while monitoring budgets, vendor relations, and profitability</li>
+    <li>Scheduled appointments, maintained grooming calendars, and ensured smooth front desk operations</li>
+    <li>Delivered full-service grooming with attention to animal and human safety, behavior, and health standards</li>
+  </ul>
+
+
+
+  <p class="label" style="color: #ffb100;">Skills:</p>
+  <ul style="color: #ffb100;">
+    <li>Team Leadership</li>
+    <li>Client Communications</li>
+    <li>Operations Management</li>
+    <li>Conflict Resolution</li>
+    <li>Scheduling</li>
+
+  </ul>
+</div>
+<!--To here-->
+</div>
+
+
+    <div id="education" class="section">
+      <h2>Education</h2>
+      <p><strong>Piedmont Virginia Community College</strong><br>A.A.S Information Systems Technology, Cloud Computing Specialization(2022–2025)</p>
+<div style="display: flex; justify-content: space-between; gap: 1rem; color: #ffb100;">
+  <ul>
+    
+    <li>CSC 110- Intro to Computing</li>
+    <li>ETR 149- PC Repair</li>
+    <li>ITD 132- SQL</li>
+    <li>ITE 182- User Support / Help Desk</li>
+    <li>ITD 256- Advanced Database Management</li>
+    <li>ITE 215- Advanced Computer Applications </li>
+    <li>ITN 254- Virtual Infrastructure</li>
+  </ul>
+  
+  <ul>
+    <li>ITN 106- Microcomputing Operating Systems</li>
+    <li>ITN 257- Cloud Computing: Infrastruture and Services</li>
+    <li>ITN 170- Linux System Administration</li>
+    <li>ITP 150- Python Programming</li>
+    <li>ITN 101- Intro to Network Concepts</li>
+    <li>ITN 206- Network Security Basics</li>
+    
+  </ul>
+</div>
+
+
+
+      <p><strong>Morehead State University</strong><br>Fine and Studio Arts coursework (2007–2008)</p>
+    </div>
+
+    <div id="certifications" class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li><a href="https://www.credly.com/badges/f7cabab1-e280-48ca-846a-78fce9f679ee/linked_in_profile" target="_blank" style="color: #0af; text-decoration: underline;">AWS Certified Cloud Practitioner</a></li>
+     
+      </ul>
+    </div>
+
+    <div id="additional" class="section">
+      <h2>Additional Certifications & Credentials</h2>
+      <ul>
+        <!--<li><a href="#">Credential Link Placeholder</a></li>-->
+        <li>PetSmart Certified Groomer</li>
+
+        <p>LinkedIn Courses Completed:</p>
+        <li>Hiring, Managing, and Separating from Employees</li>
+        <li>Business Ethics</li>
+        <li>Human Resources Foundations</li>
+        <li>Getting Started in Finance & Bookkeeping</li>
+        <li>QuickBooks Online Essential Training</li>
+      </ul>
+    </div>
+
+    <div id="honors" class="section">
+      <h2>Honors & Groups</h2>
+      <ul>
+        <li>PHI THETA KAPPA Honor Society</li>
+        <li>Neon Guild</li>
+      </ul>
+    </div>
+
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <p>Explore <a href="technology.html" style="color: #0af; text-decoration: underline;">Tech Projects</a> for detailed coding examples.</p>
+      <ul class="skills-list">
+        <li>Team Leadership</li>
+        <li>Client Communications</li>
+        <li>Scheduling</li>
+     
+        <li>Python</li>
+        <li>MySQL/ SQLWorkBench</li>
+        <li>Kali/Ubuntu Linux</li>
+        <li>Wireshark</li>
+        <li>VMware</li>
+        <li>Oracle Database</li>
+        <li>AWS Console</li>
+      </ul>
+      
+      
+      </ul>
+    </div>
+
+    <div id="portfolio" class="section">
+      <h2>Art Portfolio Highlights</h2>
+      <p>See selected works in the <a href="artistry.html" style="color: #0af; text-decoration: underline;">Artistry Gallery</a>.</p>
+    </div>
+  </div>
 </body>
 </html>
