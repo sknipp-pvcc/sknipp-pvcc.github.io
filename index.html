@@ -1,471 +1,151 @@
 <!DOCTYPE html>
-<html lang = "en">
-<!-- Name: Sarah Knipp-->
-<!--Program Purpose: This is my PVCC index.html file with links to all my HTML programs-->
-<center>
-
-	
-
-		
-
-
+<html lang="en">
 <head>
-	<img src="banner 2.png" alt="Sarah Knipp Banner">
-	
- 
+  <meta charset="UTF-8" /> <!-- Sets character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes page responsive -->
+  <title>Sarah Knipp</title> <!-- Page title -->
+
+  <!-- Import Kolker Brush from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap" rel="stylesheet">
+  <!-- Import Mea Culpa from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+  <!-- Import Cactus Classical Serif from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: linear-gradient(to right, #fdfdfd 50%, #fdfdfd 50%);
+    }
+
+    .split {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+
+    .left {
+      left: 0;
+      background: url('valeria-reverdo-AnrgtRJhGug-unsplash.jpg') no-repeat center/cover;
+    }
+
+    .right {
+      right: 0;
+      background: url('valeria-reverdo-AnrgtRJhGug-unsplash2.jpg') no-repeat center/cover;
+    }
+
+    .text-left, .text-right {
+      position: absolute;
+      width: 50%;
+      text-align: center;
+      font-size: 15vw;/*vw is for view width, which will change the size of text based on screen size*/
+      font-weight: 1800;
+      color: #736ab8;
+      font-family: "Kolker Brush", cursive;
+      text-shadow: -1px -1px 0 #f0d7f0, 1px -1px 0 #f0d7f0, -1px 1px 0 #f0d7f0, 1px 1px 0 #f0d7f0;
+
+    }
+
+    .text-left {
+      top: -150px;
+      left: 0;
+      animation: floatDown 2s forwards;
+    }
+
+    .text-right {
+      bottom: -150px;
+      right: 0;
+      animation: floatUp 2s forwards;
+    }
+
+    @keyframes floatDown {
+      to {
+        top: 20%;
+      }
+    }
+
+    @keyframes floatUp {
+      to {
+        bottom: 20%;
+      }
+    }
+
+    .center-wad {
+      position: absolute;
+      width: 40%;
+      height: 100%;
+      top: 0;
+      left: 30%;
+      transform: rotate(-20deg);
+      background: url('wad-open-paper.png') no-repeat center/contain;
+      z-index: 2;
+    }
+
+    .blossom-text {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) rotate(-25deg);
+      z-index: 3;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .blossom-left, .blossom-right {
+      display: inline-block;
+      font-size: 6vw; /*vw is for view width, which will change the size of text based on screen size*/
+      font-weight: bold;
+      color: #ffffff;
+      opacity: 0;
+     
+      font-family: "Mea Culpa", cursive;
+    }
+
+    .blossom-left {
+      animation: blossomLeft 5s forwards;
+      margin-right: -50px;
+    }
+
+    .blossom-right {
+      animation: blossomRight 5s forwards;
+      margin-left: -50px;
+    }
+
+    @keyframes blossomLeft {
+      0% { transform: translateX(0); opacity: 0; }
+      100% { transform: translateX(-60px); opacity: 1; }
+    }
+
+    @keyframes blossomRight {
+      0% { transform: translateX(0); opacity: 0; }
+      100% { transform: translateX(60px); opacity: 1; }
+    }
+
+    /* New font class for Cactus Classical Serif */
+    .cactus-classical-serif-regular {
+      font-family: "Cactus Classical Serif", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
 <body>
-	
-		
-	<table>
-		<tr>
-			<td align="center" ><h4><a href="index.html">Home</a></td></h4>
-			<td align="center" ><h4><a href="https://www.pvcc.edu/">PVCC</a></td></h4>
-			<td align="center" ><h4><a href="http://www.w3schools.com/html/">W3 Schools</a></td></h4>
-			<td align="center" ><h4><a href="contactus.html">Contact Us</a></td></h4>
-		</tr>
-				
+  <div class="split left"></div>
+  <div class="split right"></div>
 
-	</table>
-			
-
-    
-	<style>
-
-	* {
-		box-sizing: border-box;
-		font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-	}
-
-	img {
-		margin-top: 0%;
-		width: 85%;
-		height: 5%;
-	}
-
-	body {
-		background-image: url('purplebrickwall.png');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: 100% 100%;
-					}
-	
-	a { 
-		color: White;
-	
-	}
-	
-	.row {
-		margin-left:-5px;
-		margin-right:-5px;
-	}
-	  
-	.column {
-		float: left;
-		width: 50%;
-		padding: 5px;
-	}
-	
-	/* Clearfix (clear floats) */
-
-	.row::after {
-		content: "";
-		clear: both;
-		display: table;
-	}
-	
-	
-	table {
-		border-spacing: 0;
-		width: 85%;
-		border: 3px solid rgb(247, 0, 144);
-	
-	}
-	
-	th, td {
-		text-align: left;
-		padding: 16px;
-		text-align: left;
-		color: rgb(71, 67, 252);
-		border: 1px dotted rgb(247, 0, 144);
-	
-	}
-
-	h1 {
-		text-align: center;
-		color: rgb(180, 12, 247);
-	}
-
-	h2 {
-		text-align: center;
-		color: rgb(153, 46, 253);
-
-	}
-
-	h3 {
-		text-align: center;
-		
-	}
-
-	h4 {text-align: center;
-
-	}
-	
-	
-
-	</style>
-	</head>
-	<body>
-	
-
-	
-	
-	<div class="row">
-	  <div class="column">
-		<table>
-		  <tr>
-			<h1>CSC 110 Projects</h1>
-			</tr>
-	<tr>
-		<td><h2>HTML</h2></td>
-		<td><h2>JavaScript</h2></td>
-		<td><h2>Python</h2></td>
-	</tr>
-		  
-
-
-
-	<tr>
-		<td> <a href = "faves.html"> My Favorite Things </a></td>
-		<td><a href = "arithmetic.html"> Arithmetic</a></td>
-		<td><a href = "tuition.py"> Tuition Calculator</a></td>
-	</tr>
-		  
-	<tr>
-		<td><a href = "bagels.html"> Brownsville Bagels </a></td>
-		<td><a href = "buses.html"> How Many Buses? </a></td>
-		<td><a href = "pordle.py"> Pordle!</a>
-			<ul><li><a href = "colors.txt">Color List</a></li>
-				<li><a href = "animals.txt">Animal List</a></li>
-				<li><a href = "flowers.txt">Flower List</a></li>
-				<li><a href = "foods.txt">Food List</a></li>
-			</ul>
-		</td>
-	</tr>
-
-	
-	<tr>
-		<td><a href = "githubinfo.html"> Git Hub Info </a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "tickets.py"> Tickets</a></td>
-	</tr>
-
-	<tr>
-		<td><a href = "planets.html"> Info on Solar System </a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "dogs.py"> Dogs</a></td>
-	</tr>
-
-	<tr>
-		<td><a href = "opsys.html"> Chapter 3 Terms: Operating Systems </a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "magic8.py"> Magic 8 Ball</a></td>
-	</tr>
-
-	<tr>
-		<td><a href = "network.html"> Chapter 4 Terms: Networking </a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "topic.py"> Random Number Generator</a></td>
-	</tr>
-
-	<tr>
-		<td><a href = "programming.html">Chapter 5 Terms: Programming</a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "pizza.py"> Pizza</a></td>
-	</tr>
-
-	<tr>
-		<td><a href = "proglang.html">Chapter 6 Terms: Programming Languages</a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "payroll.py"> Fresh Foods Employee Weekly Pay</a></td>
-	</tr>
-
-		<tr>
-		<td><a href = "software-eng.html">Chapter 7 Terms: Software Engineering</a></td>
-		<td>JavaScript Project</td>
-		<td><a href = "grades.py">CSC 230 Grade Report Version 2</a></td>
-
-	</tr>
-
-	<tr>
-		<td>HTML Project</td>
-		<td>JavaScript Project</td>
-		<td><a href = "grades_file.py">CSC 230 Grade Report Version 3</a></td>
-
-	</tr>
-
-
-
-
-		</table>
-	  </div>
-	  
-	 
-	 
-	 
-	 <!--Python Class table-->
-	 
-	  <div class="column">
-		<table>
-		<tr>
-			<h1>ITP 150 Python Projects</h1>
-			</tr>
-		<tr>
-			<td><h2>Week</h2></td>
-			<td><h2>Assignment</h2></td>
-		</tr>
-
-		<tr>
-			<td>Week 1 - Chapter 1</td>
-			<td>
-				<ul>
-					<li><a href = "PythonWeek1.py">Questions</a></td></li>
-				</ul>
-		</tr>
-		<tr>
-			<td>Week 2 - Chapter 2</td>
-			<td>
-				<ul><li><a href = "Week 2 1-6.py">Questions 1-6</a></li>
-					<li><a href = "Week 2 P1.py">Area of Shapes</a></li>
-					<li><a href = "Week 2 p2.py">Very Useless Clock</a></li>
-				</ul>
-			</td>
-			
-		</tr>
-		<tr>
-			<td>Week 3 - Chapter 3: Hello Little Turtles</td>
-			<td>
-				<ul>
-					<li><a href = "Week 3 p1.py">Bulk Invites</a></li>
-					<li><a href = "Week 3 1-5.py">Questions 1-5</a></li>
-					<li><a href = "Week 3 6.py">Turtles Drawing Shapes in Grass</a></li>
-					<li><a href = "Week 3 Q12.py">Turtle Clock</a></li>
-					<li><a href = "Week 3 Q13.py">Turtle (Type)</a></li>
-					<li><a href = "Week 3 Initials.py">Turtle Drawing Initials</a></li>
-					
-				</ul>
-			</td>
-			
-		</tr>
-		<td>Week 4- Chapter 4: Funtions</td>
-		<td>
-			<ul>
-				<li><a href = "Week 4 - Question 1- Turtle Draw Squares.py">Turtle: Draw Squares</a></li>
-				<li><a href = "Week 4 - Question 2- Turtle Square within Square BONUS CONTENT-1.py">Turtle: Square within Squares Alt</a></li>
-				<li><a href = "Week 4 - Question 2- Turtle Square within Square.py">Turtle: Square within Squares</a></li>
-				<li><a href = "Week 4 - Question 3 - Polygon.py">Turtle: Draw Polygon</a></li>
-				<li><a href = "Week 4 - Question 3- Polygon BONUS CONTENT.py">Turtle: Draw Polygon Alt</a></li>
-				<li><a href = "Week 4 - Question 4 - Pretty Pattern.py">Turtle: Draw Pretty Pattern</a></li>
-				<li><a href = "Week 4 - Question 5a - Turtle Spiral.py">Turtle: Draw Pretty Patten Alt</a></li>
-				<li><a href = "Week 4 - Question 5b- Turtle Tilt Spiral 2.py">Turtle: Tilt Spiral</a></li>
-				<li><a href = "Week 4 - Question 5b - Turtle Tilt Spiral 1.py">Turtle: Tilt Spiral Alt</a></li>
-				<li><a href = "Week 4 - Question 6 -Equitriangle.py">Turtle: Equilateral Triangle </a></li>
-				<li><a href = "Week 4 - Question 8- Area of A circle.py"> Area of a Circle</a></li>
-				<li><a href = "Week 4 - Question 9 - Star.py">Turtle: Draw Star</a></li>
-				<li><a href = "Week 4 - Question 10 - Multiple Stars.py">Turtle: Draw Multiple Stars</a></li>
-				<li><a href = "Week 4 - Question 7- Sum_to.py">Sum numbers in range</a></li>
-			
-		<tr>
-		<td>Week 5: Chapter 5: Conditionals</td>
-				<td>
-					<ul>
-						<li><a href = "Week 5 -Question 1.py">Return day of the week (numbers = days)</a></li>
-						<li><a href = "Week 5 -Question 3,4,5.py">Logical Opposites, Evaulate Expressions, Truth Table</a></li>
-						<li><a href = "Week 5 -Question 6.py">Return grade</a></li>
-						<li><a href = "Week 5 -Question 7.py">Turtle: bar chart</a></li>
-						<li><a href = "Week 5 -Question 8.py">Turtle: bar chart colors</a></li>
-						<li><a href = "Week 5 -Question 9.py">Turtle: bar chart negatives</a></li>
-						<li><a href = "Week 5 -Question 10.py">Function: Find Hypotenuese</a></li>
-						<li><a href = "Week 5 -Question 13.py">Floating point arithmetic</a></li>
-					</ul>
-				</td>
-			</tr>
-		
-			<tr>
-				<td>Week 6 </td>
-						<td>
-							<ul>
-								<li>Test 1, No Assignments</li>
-							</ul>
-						</td>
-					</tr>
-				
-				<td>Week 7- Chapter 6:  "Fruitful" Funtions </td>
-				<td>
-					<ul>
-						<li><a href = "Week 7 Chapter 6 Ex 1.py">Week 7 Chapter 6 Ex 1</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 2.py">Week 7 Chapter 6 Ex 2</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 3.py">Week 7 Chapter 6 Ex 3</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 6.py">Week 7 Chapter 6 Ex 6</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 7.py">Week 7 Chapter 6 Ex 7</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 11.py">Week 7 Chapter 6 Ex 11</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 14.py">Week 7 Chapter 6 Ex 14</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 15.py">Week 7 Chapter 6 Ex 15</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 18.py">Week 7 Chapter 6 Ex 18</a></li>
-						<li><a href = "Week 7 Chapter 6 Ex 19.py">Week 7 Chapter 6 Ex 19</a></li>
-				</td>
-						
-					</ul>
-				</td>
-			</tr>
-
-					<td>Week 8- Chapter 7: Iteration </td>
-				<td>
-					<ul>
-						<li><a href = "Week 7 Ex 1- Function to Count Odd Numbers in List.py">Function To Count Odd Numbers in a list</a></li>
-						<li><a href = "Week 7 Ex 2- Sum all Even Numbers in List.py">Sum all even numbers in a list</a></li>
-						<li><a href = "Week 7 Ex 3- Sum all negative numbers in list.py">Sum all negative numbers in a list</a></li>
-						<li><a href = "Week 7 Ex 4- Count How many words in a list by letter number.py">Count how many words are in a list by letter number</a></li>
-						<li><a href = "Week 7 Ex 5- Sum all the elements in a list up to but not including the first even number.py">Sum all elements in a list up to a certain word</a></li>
-						<li><a href = "Week 7 Ex 6- Count words in list until certain word.py">Count words in a list until certain word</a></li>
-						<li><a href = "Week 7 Ex 14- NumDigits.py">Numbers/ Digits</a></li>
-						<li><a href = "Week 7 Ex 15- NumDigits 2.py">Numbers/ Digits 2</a></li>
-						<li><a href = "Week 7 Ex 16- sum of square roots.py">Sum of Square Roots</a></li>
-				</td>
-						
-					</ul>
-				</td>
-			</tr>
-		
-					<td>Week 9 </td>
-				<td>
-					<ul>
-						<li>Spring Break</li>
-						
-					</ul>
-				</td>
-			</tr>
-			<td>Week 9- Chapter 8: Strings and Chapter 9: Tuples </td>
-				<td>
-					<ul>
-						<li><a href = "Week 9 Ch 8 - 1.py">Week 9 Ch 8 - 1</a></li>
-						<li><a href = "Week 9 Ch 8 - 2.py">Week 9 Ch 8 - 2</a></li>
-						<li><a href = "Week 9 Ch 8 - 3.py">Week 9 Ch 8 - 3</a></li>
-						<li><a href = "Week 9 Ch 8 - 4.py">Week 9 Ch 8 - 4</a></li>
-						<li><a href = "Week 9 Ch 8 - 5.py">Week 9 Ch 8 - 5</a></li>
-						<li><a href = "Week 9 Ch 8 - 7.py">Week 9 Ch 8 - 7</a></li>
-						<li><a href = "Week 9 Ch 8 - 9.py">Week 9 Ch 8 - 9</a></li>
-						<li><a href = "Week 9 Ch 8 - 10.py">Week 9 Ch 8 - 10</a></li>
-					
-
-				</td>
-						
-					</ul>
-				</td>
-			</tr>
-			<td>Week 10- Chapter 11: :Lists </td>
-				<td>
-					<ul>
-						<li><a href = "Week 10 Chapter 11 - 1.py">Question 1</a></li>
-						<li><a href = "Week 10 Chapter 11 - 3.py">Question 3</a></li>
-						<li><a href = "Week 10 Chapter 11 - 4.py">Question 4</a></li>
-						<li><a href = "Week 10 Chapter 11 - 5.py">Question 5</a></li>
-						<li><a href = "Week 10 Chapter 11 - 6.py">Question 6</a></li>
-						<li><a href = "Week 10 Chapter 11 - 7.py">Question 7</a></li>
-						<li><a href = "Week 10 Chapter 11 - 9.py">Question 9</a></li>
-						<li><a href = "Week 10 Chapter 11 - 10.py">Question 10</a></li>
-
-
-
-				</td>
-						
-					</ul>
-				</td>
-			</tr>
-
-			<td>Week 11- Chapter 12: Modules and Chapter 13: Files  </td>
-			<td>
-				<ul>
-					<li><a href = "Week 11 Chapter 12 Ex 1.py">Question 1</a></li>
-					<li><a href = "Week 11 Chapter 12 Ex 2.py">Question 2</a></li>
-					<li><a href = "Week 11 Chapter 12 Ex 3.py">Question 3</a></li>
-					<li><a href = "Week 11 Chapter 12 Ex 4.py">Question 4</a></li>
-					<li><a href = "Week 11 Chapter 12 ex 7.py">Question 7</a></li>
-
-
-			</td>
-					
-				</ul>
-			</td>
-		</tr>
-		<td>Week 12- Chapter 20: Dictionaries </td>
-		<td>
-			<ul>
-				<li><a href = "Week 9 Ch 8 - 1.py">Coming Soon</a></li>
-
-
-		</td>
-				
-			</ul>
-		</td>
-	</tr>
-	<td>Week 13-  </td>
-	<td>
-		<ul>
-			<li><a href = "Week 9 Ch 8 - 1.py">Coming Soon</a></li>
-
-
-
-	</td>
-			
-		</ul>
-	</td>
-</tr>
-<td>Week 14-  </td>
-<td>
-	<ul>
-		<li><a href = "Week 9 Ch 8 - 1.py">Coming Soon</a></li>
-
-
-
-</td>
-		
-	</ul>
-</td>
-</tr>
-<td>Week 15-  </td>
-<td>
-	<ul>
-		<li><a href = "Week 9 Ch 8 - 1.py">Coming Soon</a></li>
-	
-
-</td>
-		
-	</ul>
-</td>
-</tr>
-<td>Week 16-  </td>
-<td>
-	<ul>
-		<li><a href = "Week 9 Ch 8 - 1.py">Coming Soon</a></li>
-
-
-</td>
-		
-	</ul>
-</td>
-</tr>
-
-
-
-
-
-		</table>
-	  </div>
-	</div>
-	
-	</body>
-	</html>
-	
-
-	
+  <div class="text-left"><a href="technology.html" style="color: inherit; text-decoration: none;">Technology</a></div>
+  <div class="text-right"><a href="artistry.html" style="color: inherit; text-decoration: none;">Artistry</a></div>
+  <!--<div class="center-wad"></div> REMOVED FOR NOW-->
+  <div class="blossom-text">
+    <span class="blossom-left cactus-classical-serif-regular"><a href="resume.html" style="color: inherit; text-decoration: none;">Sarah</a></span>
+     <span class="blossom-right cactus-classical-serif-regular"><a href="Resume.html" style="color: inherit; text-decoration: none;">Knipp</a></span>
+  </div>
+  <!-- https://unsplash.com/photos/a-mountain-with-snow-AnrgtRJhGug?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash -->
+</body>
+</html>
