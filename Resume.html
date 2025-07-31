@@ -120,19 +120,23 @@
       border-radius: 5px;
     }
 
-    .profile-pic {
-  width: 15.625rem;
+.profile-pic {
+  width: 15.625rem; /* stays proportional */
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 0.3125rem solid rgb(28, 20, 20);
   position: absolute;
-  top: 1.875rem;
-  left: 1.25rem;
+  top: 2vw;
+  left: 2vw;
+  max-width: 25vw;
+  height: auto;
   opacity: 0;
   z-index: 10;
   animation: fadeIn 2s ease-in-out forwards;
 }
+
+
 
     .name-line {
       position: absolute;
@@ -184,29 +188,52 @@
     }
 
     @media (max-width: 768px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        padding: 30rem 1rem 2rem 1rem;
-      }
-      .main-content {
-        margin-left: 0;
-        padding: 30rem 1rem 2rem 1rem;
-      }
-      .name-line {
-        left: 20px;
-        width: 90%;
-      }
-      .name-text {  
-        position: absolute;
-        top: 160px;
-        left: 40%; /* <-- change this */
-        font-size: 2rem;
-        white-space: nowrap;
-        opacity: 0;
-        animation: slideInText 1s ease-out forwards 3.5s;
-        z-index: 2;
-      }
+  .sidebar {
+    position: relative;
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+
+  .profile-pic {
+    width: 10rem;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+  }
+
+  .name-line {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .name-text {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .education-column {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
 
     }
   </style>
