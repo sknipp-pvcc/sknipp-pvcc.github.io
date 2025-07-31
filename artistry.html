@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Make page responsive -->
   <title>Artistry Gallery</title> <!-- Page title -->
   <style>
+    /* Gallery Page Styles */
     * {
       box-sizing: border-box; /* Ensures padding/margin don't break layout */
     }
@@ -13,7 +14,9 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #f4f4f4; /* Light gray background */
+      background-color: #000; /* Changed to black background */
+      color: #352b2b; /* All text white by default */
+      /* background-image: url('path-to-background.jpg'); */ /* Optional: insert background image */
     }
 
     header {
@@ -22,6 +25,7 @@
       background-color: #fff;
       font-size: 2rem; /* Large font size */
       font-weight: bold;
+      color:#000;
     }
 
     .gallery {
@@ -44,16 +48,18 @@
     }
 
     .gallery-item img {
-      width: 100%; /* Image fills container */
-      display: block; /* Removes bottom whitespace */
-      cursor: pointer; /* Show clickable cursor */
+      width: 100%;
+      height: 300px; /* Uniform thumbnail height */
+      object-fit: cover; /* Crop to fill without stretching */
+      display: block;
+      cursor: pointer;
     }
 
     .caption {
       padding: 1rem;
       text-align: center;
       font-size: 1rem;
-      color: #333;
+      color: #010101; /* Changed to white */
     }
 
     /* Lightbox modal styling */
@@ -78,6 +84,12 @@
   </style>
 </head>
 <body>
+  <nav style="background-color: #000000; padding: 1rem; text-align: center;">
+    <a href="index.html" style="color: rgb(216, 1, 1); text-decoration: none; margin: 0 1rem;">Home</a>
+    <a href="resume.html" style="color: rgb(69, 218, 23); text-decoration: none; margin: 0 1rem;">Resume</a>
+    <a href="technology.html" style="color: rgb(17, 165, 160); text-decoration: none; margin: 0 1rem;">Tech Projects</a>
+  </nav>
+
   <header>
     <!-- Editable Header Text -->
     <p>Welcome to the Artistry Gallery</p>
@@ -87,21 +99,26 @@
     <!-- Gallery Item 1 -->
     <div class="gallery-item">
       <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/apoth.jpg" alt="Apothecary Painting" onclick="openLightbox(this.src)" />
-
       <div class="caption">Apothecary Painting • Mixed Media • 2024</div>
     </div>
 
     <!-- Gallery Item 2 -->
     <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/sarahknipp/art-gallery/main/images/abstract-blues.jpg" alt="Abstract Blues" onclick="openLightbox(this.src)" />
-      <div class="caption">ABlues • Acrylic • 2022</div>
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/dad.jpg" alt="Dad" onclick="openLightbox(this.src)" />
+      <div class="caption">Dad • Acrylic on Masonite • 2017</div>
     </div>
 
     <!-- Gallery Item 3 -->
     <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/sarahknipp/art-gallery/main/images/wildflower-study-2023.jpg" alt="Wildflower Study" onclick="openLightbox(this.src)" />
-      <div class="caption">Wildflower Study • Watercolor • 2023</div>
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/brwindow.jpg" alt="Raven Faux Stained Glass Window" onclick="openLightbox(this.src)" />
+      <div class="caption">Raven Window • Faux Stained Glass • 2020</div>
     </div>
+
+
+
+
+
+    
 
     <!-- Copy/paste blocks above to add more artworks -->
   </div>
