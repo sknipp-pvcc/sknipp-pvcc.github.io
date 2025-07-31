@@ -1,14 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Sets character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes page responsive -->
-  <title>Artistry</title> <!-- Page title -->
-<style></style>
+  <meta charset="UTF-8" /> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Make page responsive -->
+  <title>Artistry Gallery</title> <!-- Page title -->
+  <style>
+    * {
+      box-sizing: border-box; /* Ensures padding/margin don't break layout */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4; /* Light gray background */
+    }
+
+    header {
+      padding: 2rem; /* Adds space around text */
+      text-align: center; /* Centers header text */
+      background-color: #fff;
+      font-size: 2rem; /* Large font size */
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid; /* Enables grid layout */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 per row at full size, wraps smaller */
+      gap: 1.5rem; /* Space between grid items */
+      padding: 2rem; /* Space around gallery area */
+    }
+
+    .gallery-item {
+      background-color: #ffffff; /* White background for item */
+      border-radius: 8px; /* Rounded corners */
+      overflow: hidden; /* Prevents image from overflowing */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      transition: transform 0.2s; /* Animation for hover */
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+    }
+
+    .gallery-item img {
+      width: 100%; /* Image fills container */
+      display: block; /* Removes bottom whitespace */
+      cursor: pointer; /* Show clickable cursor */
+    }
+
+    .caption {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* Lightbox modal styling */
+    .lightbox {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(4, 4, 4, 0.8); /* Semi-transparent black */
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
-    Art Page Coming Soon!
- 
+  <header>
+    <!-- Editable Header Text -->
+    <p>Art Projects (Coming Soon!)</p>
+  </header>
+
+  <div class="gallery">
+    <!-- Gallery Item 1 -->
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/sarahknipp/art-gallery/main/images/apoth.jpg" alt="apoth" onclick="openLightbox(this.src)" />
+      <div class="caption">Apothecary • Acrylic on Masonite • 2016</div>
+    </div>
+
+    <!-- Gallery Item 2 -->
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/sarahknipp/art-gallery/main/images/abstract-blues.jpg" alt="Abstract Blues" onclick="openLightbox(this.src)" />
+      <div class="caption">Abstract Blues • Acrylic • 2022</div>
+    </div>
+
+    <!-- Gallery Item 3 -->
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/sarahknipp/art-gallery/main/images/wildflower-study-2023.jpg" alt="Wildflower Study" onclick="openLightbox(this.src)" />
+      <div class="caption">Wildflower Study • Watercolor • 2023</div>
+    </div>
+
+    <!-- Copy/paste blocks above to add more artworks -->
+  </div>
+
+  <!-- Fullscreen Image Modal -->
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Full-size artwork" />
+  </div>
+
+  <script>
+    // Function to open image in fullscreen lightbox
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'flex';
+      lightboxImg.src = src;
+    }
+  </script>
 </body>
 </html>
+
