@@ -19,12 +19,13 @@
     }
 
     header {
-      padding: 2rem;
+      padding: .5rem;
       text-align: center;
-      background-color: #fff;
+      background-color: #d2d2d2;
       color: #000;
-      font-size: 2rem;
+      font-size: 4rem;
       font-weight: bold;
+      font-family:Arial, Helvetica, sans-serif; /*This font sucks, find something else that looks like a brush stroke*/
     }
 
     .filters {
@@ -94,16 +95,19 @@
   </style>
 </head>
 <body>
+  <!--Nav strip-->
   <nav style="background-color: #111; padding: 1rem; text-align: center;">
     <a href="index.html" style="color: white; text-decoration: none; margin: 0 1rem;">Home</a>
     <a href="resume.html" style="color: white; text-decoration: none; margin: 0 1rem;">Resume</a>
-    <a href="tech-projects.html" style="color: white; text-decoration: none; margin: 0 1rem;">Tech Projects</a>
+    <a href="technology.html" style="color: white; text-decoration: none; margin: 0 1rem;">Tech Projects</a>
+    <a href="Contact.html" style="color: white; text-decoration: none; margin: 0 1rem;">Contact</a>
   </nav>
 
   <header>
-    <p>Welcome to the Artistry Gallery</p>
+    <p>Art Projects</p>
   </header>
 
+<!--Drop Down Filters-->
   <div class="filters">
     <label for="mediumFilter">Medium:</label>
     <select id="mediumFilter">
@@ -118,15 +122,23 @@
       <option value="">All</option>
       <option value="2014">2014</option>
       <option value="2015">2015</option>
+      <option value="2015">2016</option>
       <option value="2017">2017</option>
       <option value="2018">2018</option>
       <option value="2019">2019</option>
       <option value="2020">2020</option>
-      <option value="2024">2024</option>
+      <option value="2015">2021</option>
+      <option value="2015">2022</option>
+      <option value="2015">2023</option>
+      <option value="2015">2024</option>
+      <option value="2024">2025</option>
     </select>
   </div>
 
   <div class="gallery" id="gallery">
+
+  <!--Gallery Items Copy and Paste to add Additional-->
+
     <div class="gallery-item" data-medium="mixed-media" data-date="2024">
       <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/apoth.jpg" alt="Apothecary Painting" onclick="openLightbox(this.src)" />
       <div class="caption">Apothecary Painting • Mixed Media • 2024</div>
