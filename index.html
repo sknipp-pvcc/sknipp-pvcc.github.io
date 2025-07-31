@@ -1,151 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Sets character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes page responsive -->
-  <title>Sarah Knipp</title> <!-- Page title -->
-
-  <!-- Import Kolker Brush from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap" rel="stylesheet">
-  <!-- Import Mea Culpa from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
-  <!-- Import Cactus Classical Serif from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artistry Gallery</title>
   <style>
-    body, html {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
       font-family: sans-serif;
-      background: linear-gradient(to right, #fdfdfd 50%, #fdfdfd 50%);
+      background-color: #000;
+      color: #fff;
+      /* background-image: url('path-to-background.jpg'); */
     }
 
-    .split {
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      top: 0;
-    }
-
-    .left {
-      left: 0;
-      background: url('valeria-reverdo-AnrgtRJhGug-unsplash.jpg') no-repeat center/cover;
-    }
-
-    .right {
-      right: 0;
-      background: url('valeria-reverdo-AnrgtRJhGug-unsplash2.jpg') no-repeat center/cover;
-    }
-
-    .text-left, .text-right {
-      position: absolute;
-      width: 50%;
+    header {
+      padding: .5rem;
       text-align: center;
-      font-size: 15vw;/*vw is for view width, which will change the size of text based on screen size*/
-      font-weight: 1800;
-      color: #736ab8;
-      font-family: "Kolker Brush", cursive;
-      text-shadow: -1px -1px 0 #f0d7f0, 1px -1px 0 #f0d7f0, -1px 1px 0 #f0d7f0, 1px 1px 0 #f0d7f0;
-
-    }
-
-    .text-left {
-      top: -150px;
-      left: 0;
-      animation: floatDown 2s forwards;
-    }
-
-    .text-right {
-      bottom: -150px;
-      right: 0;
-      animation: floatUp 2s forwards;
-    }
-
-    @keyframes floatDown {
-      to {
-        top: 20%;
-      }
-    }
-
-    @keyframes floatUp {
-      to {
-        bottom: 20%;
-      }
-    }
-
-    .center-wad {
-      position: absolute;
-      width: 40%;
-      height: 100%;
-      top: 0;
-      left: 30%;
-      transform: rotate(-20deg);
-      background: url('wad-open-paper.png') no-repeat center/contain;
-      z-index: 2;
-    }
-
-    .blossom-text {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%) rotate(-25deg);
-      z-index: 3;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .blossom-left, .blossom-right {
-      display: inline-block;
-      font-size: 6vw; /*vw is for view width, which will change the size of text based on screen size*/
+      background-color: #d2d2d2;
+      color: #000;
+      font-size: 4rem;
       font-weight: bold;
-      color: #ffffff;
-      opacity: 0;
-     
-      font-family: "Mea Culpa", cursive;
+      font-family:Arial, Helvetica, sans-serif; /*This font sucks, find something else that looks like a brush stroke*/
     }
 
-    .blossom-left {
-      animation: blossomLeft 5s forwards;
-      margin-right: -50px;
+    .filters {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
     }
 
-    .blossom-right {
-      animation: blossomRight 5s forwards;
-      margin-left: -50px;
+    .filters select {
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
     }
 
-    @keyframes blossomLeft {
-      0% { transform: translateX(0); opacity: 0; }
-      100% { transform: translateX(-60px); opacity: 1; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
     }
 
-    @keyframes blossomRight {
-      0% { transform: translateX(0); opacity: 0; }
-      100% { transform: translateX(60px); opacity: 1; }
+    .gallery-item {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
     }
 
-    /* New font class for Cactus Classical Serif */
-    .cactus-classical-serif-regular {
-      font-family: "Cactus Classical Serif", serif;
-      font-weight: 400;
-      font-style: normal;
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .caption {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #000000;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="split left"></div>
-  <div class="split right"></div>
+  <!--Nav strip-->
+  <nav style="background-color: #111; padding: 1rem; text-align: center;">
+    <a href="index.html" style="color: white; text-decoration: none; margin: 0 1rem;">Home</a>
+    <a href="resume.html" style="color: white; text-decoration: none; margin: 0 1rem;">Resume</a>
+    <a href="technology.html" style="color: white; text-decoration: none; margin: 0 1rem;">Tech Projects</a>
+    <a href="Contact.html" style="color: white; text-decoration: none; margin: 0 1rem;">Contact</a>
+  </nav>
 
-  <div class="text-left"><a href="technology.html" style="color: inherit; text-decoration: none;">Technology</a></div>
-  <div class="text-right"><a href="artistry.html" style="color: inherit; text-decoration: none;">Artistry</a></div>
-  <!--<div class="center-wad"></div> REMOVED FOR NOW-->
-  <div class="blossom-text">
-    <span class="blossom-left cactus-classical-serif-regular"><a href="resume.html" style="color: inherit; text-decoration: none;">Sarah</a></span>
-     <span class="blossom-right cactus-classical-serif-regular"><a href="Resume.html" style="color: inherit; text-decoration: none;">Knipp</a></span>
+  <header>
+    <p>Art Projects</p>
+  </header>
+
+<!--Drop Down Filters-->
+  <div class="filters">
+    <label for="mediumFilter">Medium:</label>
+    <select id="mediumFilter">
+      <option value="">All</option>
+      <option value="mixed-media">Mixed Media</option>
+      <option value="acrylic">Acrylic</option>
+      <option value="faux-stained-glass">Faux Stained Glass</option>
+    </select>
+
+    <label for="dateFilter">Date:</label>
+    <select id="dateFilter">
+      <option value="">All</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2015">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2015">2021</option>
+      <option value="2015">2022</option>
+      <option value="2015">2023</option>
+      <option value="2015">2024</option>
+      <option value="2024">2025</option>
+    </select>
   </div>
-  <!-- https://unsplash.com/photos/a-mountain-with-snow-AnrgtRJhGug?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash -->
+
+  <div class="gallery" id="gallery">
+
+  <!--Gallery Items Copy and Paste to add Additional-->
+
+    <div class="gallery-item" data-medium="mixed-media" data-date="2024">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/apoth.jpg" alt="Apothecary Painting" onclick="openLightbox(this.src)" />
+      <div class="caption">Apothecary Painting • Mixed Media • 2024</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2017">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/dad.jpg" alt="Dad" onclick="openLightbox(this.src)" />
+      <div class="caption">Dad • Acrylic on Masonite • 2017</div>
+    </div>
+    <div class="gallery-item" data-medium="faux-stained-glass" data-date="2020">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/brwindow.jpg" alt="Raven Faux Stained Glass Window" onclick="openLightbox(this.src)" />
+      <div class="caption">Raven Window • Faux Stained Glass • 2020</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2015">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/deer.jpg" alt="Deer" onclick="openLightbox(this.src)" />
+      <div class="caption">Deer Painting • Acrylic • 2015</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2018">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/diablopainting.JPG" alt="Diablo" onclick="openLightbox(this.src)" />
+      <div class="caption">Diablo • Acrylic on Masonite • 2018</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/dryad.jpg" alt="Dryad" onclick="openLightbox(this.src)" />
+      <div class="caption">Dryad • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2014">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/form.jpeg" alt="Form Study" onclick="openLightbox(this.src)" />
+      <div class="caption">Form Study • Acrylic on Masonite • 2014</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2014">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/gardner.jpg" alt="The Gardner" onclick="openLightbox(this.src)" />
+      <div class="caption">The Gardner • Acrylic on Masonite • 2014</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/kilchurn.jpg" alt="Kilchurn Castle" onclick="openLightbox(this.src)" />
+      <div class="caption">Kilchurn Castle • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/medusa.jpg" alt="Medusa" onclick="openLightbox(this.src)" />
+      <div class="caption">Medusa • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/posiden.jpg" alt="Poseidon" onclick="openLightbox(this.src)" />
+      <div class="caption">Poseidon • Acrylic on Masonite • 2019</div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Full-size artwork" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'flex';
+      lightboxImg.src = src;
+    }
+
+    function filterGallery() {
+      const medium = document.getElementById('mediumFilter').value;
+      const date = document.getElementById('dateFilter').value;
+      const items = document.querySelectorAll('.gallery-item');
+
+      items.forEach(item => {
+        const itemMedium = item.dataset.medium;
+        const itemDate = item.dataset.date;
+        const matchMedium = !medium || itemMedium === medium;
+        const matchDate = !date || itemDate === date;
+        item.style.display = (matchMedium && matchDate) ? '' : 'none';
+      });
+    }
+
+    document.getElementById('mediumFilter').addEventListener('change', filterGallery);
+    document.getElementById('dateFilter').addEventListener('change', filterGallery);
+  </script>
 </body>
 </html>
