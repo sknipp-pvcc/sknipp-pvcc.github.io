@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Make page responsive -->
-  <title>Artistry Gallery</title> <!-- Page title -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artistry Gallery</title>
   <style>
-    /* Gallery Page Styles */
     * {
-      box-sizing: border-box; /* Ensures padding/margin don't break layout */
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #000; /* Changed to black background */
-      color: #352b2b; /* All text white by default */
-      /* background-image: url('path-to-background.jpg'); */ /* Optional: insert background image */
+      background-color: #000;
+      color: #fff;
+      /* background-image: url('path-to-background.jpg'); */
     }
 
     header {
-      padding: 2rem; /* Adds space around text */
-      text-align: center; /* Centers header text */
+      padding: 2rem;
+      text-align: center;
       background-color: #fff;
-      font-size: 2rem; /* Large font size */
+      color: #000;
+      font-size: 2rem;
       font-weight: bold;
-      color:#000;
+    }
+
+    .filters {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+    }
+
+    .filters select {
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
     }
 
     .gallery {
-      display: grid; /* Enables grid layout */
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 per row at full size, wraps smaller */
-      gap: 1.5rem; /* Space between grid items */
-      padding: 2rem; /* Space around gallery area */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
     }
 
     .gallery-item {
-      background-color: #ffffff; /* White background for item */
-      border-radius: 8px; /* Rounded corners */
-      overflow: hidden; /* Prevents image from overflowing */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-      transition: transform 0.2s; /* Animation for hover */
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
     }
 
     .gallery-item:hover {
-      transform: scale(1.02); /* Slight zoom on hover */
+      transform: scale(1.02);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 300px; /* Uniform thumbnail height */
-      object-fit: cover; /* Crop to fill without stretching */
+      height: 300px;
+      object-fit: cover;
       display: block;
       cursor: pointer;
     }
@@ -59,18 +70,17 @@
       padding: 1rem;
       text-align: center;
       font-size: 1rem;
-      color: #010101; /* Changed to white */
+      color: #000000;
     }
 
-    /* Lightbox modal styling */
     .lightbox {
-      display: none; /* Hidden by default */
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+      background: rgba(0, 0, 0, 0.8);
       align-items: center;
       justify-content: center;
       z-index: 1000;
@@ -84,58 +94,113 @@
   </style>
 </head>
 <body>
-  <nav style="background-color: #000000; padding: 1rem; text-align: center;">
-    <a href="index.html" style="color: rgb(216, 1, 1); text-decoration: none; margin: 0 1rem;">Home</a>
-    <a href="resume.html" style="color: rgb(69, 218, 23); text-decoration: none; margin: 0 1rem;">Resume</a>
-    <a href="technology.html" style="color: rgb(17, 165, 160); text-decoration: none; margin: 0 1rem;">Tech Projects</a>
+  <nav style="background-color: #111; padding: 1rem; text-align: center;">
+    <a href="index.html" style="color: white; text-decoration: none; margin: 0 1rem;">Home</a>
+    <a href="resume.html" style="color: white; text-decoration: none; margin: 0 1rem;">Resume</a>
+    <a href="tech-projects.html" style="color: white; text-decoration: none; margin: 0 1rem;">Tech Projects</a>
   </nav>
 
   <header>
-    <!-- Editable Header Text -->
     <p>Welcome to the Artistry Gallery</p>
   </header>
 
-  <div class="gallery">
-    <!-- Gallery Item 1 -->
-    <div class="gallery-item">
+  <div class="filters">
+    <label for="mediumFilter">Medium:</label>
+    <select id="mediumFilter">
+      <option value="">All</option>
+      <option value="mixed-media">Mixed Media</option>
+      <option value="acrylic">Acrylic</option>
+      <option value="faux-stained-glass">Faux Stained Glass</option>
+    </select>
+
+    <label for="dateFilter">Date:</label>
+    <select id="dateFilter">
+      <option value="">All</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2024">2024</option>
+    </select>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <div class="gallery-item" data-medium="mixed-media" data-date="2024">
       <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/apoth.jpg" alt="Apothecary Painting" onclick="openLightbox(this.src)" />
       <div class="caption">Apothecary Painting • Mixed Media • 2024</div>
     </div>
-
-    <!-- Gallery Item 2 -->
-    <div class="gallery-item">
+    <div class="gallery-item" data-medium="acrylic" data-date="2017">
       <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/dad.jpg" alt="Dad" onclick="openLightbox(this.src)" />
       <div class="caption">Dad • Acrylic on Masonite • 2017</div>
     </div>
-
-    <!-- Gallery Item 3 -->
-    <div class="gallery-item">
+    <div class="gallery-item" data-medium="faux-stained-glass" data-date="2020">
       <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/brwindow.jpg" alt="Raven Faux Stained Glass Window" onclick="openLightbox(this.src)" />
       <div class="caption">Raven Window • Faux Stained Glass • 2020</div>
     </div>
-
-
-
-
-
-    
-
-    <!-- Copy/paste blocks above to add more artworks -->
+    <div class="gallery-item" data-medium="acrylic" data-date="2015">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/deer.jpg" alt="Deer" onclick="openLightbox(this.src)" />
+      <div class="caption">Deer Painting • Acrylic • 2015</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2018">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/diablopainting.JPG" alt="Diablo" onclick="openLightbox(this.src)" />
+      <div class="caption">Diablo • Acrylic on Masonite • 2018</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/dryad.jpg" alt="Dryad" onclick="openLightbox(this.src)" />
+      <div class="caption">Dryad • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2014">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/form.jpeg" alt="Form Study" onclick="openLightbox(this.src)" />
+      <div class="caption">Form Study • Acrylic on Masonite • 2014</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2014">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/gardner.jpg" alt="The Gardner" onclick="openLightbox(this.src)" />
+      <div class="caption">The Gardner • Acrylic on Masonite • 2014</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/kilchurn.jpg" alt="Kilchurn Castle" onclick="openLightbox(this.src)" />
+      <div class="caption">Kilchurn Castle • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/medusa.jpg" alt="Medusa" onclick="openLightbox(this.src)" />
+      <div class="caption">Medusa • Acrylic on Masonite • 2019</div>
+    </div>
+    <div class="gallery-item" data-medium="acrylic" data-date="2019">
+      <img src="https://raw.githubusercontent.com/sknipp-pvcc/sknipp-pvcc.github.io/main/posiden.jpg" alt="Poseidon" onclick="openLightbox(this.src)" />
+      <div class="caption">Poseidon • Acrylic on Masonite • 2019</div>
+    </div>
   </div>
 
-  <!-- Fullscreen Image Modal -->
   <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Full-size artwork" />
   </div>
 
   <script>
-    // Function to open image in fullscreen lightbox
     function openLightbox(src) {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       lightbox.style.display = 'flex';
       lightboxImg.src = src;
     }
+
+    function filterGallery() {
+      const medium = document.getElementById('mediumFilter').value;
+      const date = document.getElementById('dateFilter').value;
+      const items = document.querySelectorAll('.gallery-item');
+
+      items.forEach(item => {
+        const itemMedium = item.dataset.medium;
+        const itemDate = item.dataset.date;
+        const matchMedium = !medium || itemMedium === medium;
+        const matchDate = !date || itemDate === date;
+        item.style.display = (matchMedium && matchDate) ? '' : 'none';
+      });
+    }
+
+    document.getElementById('mediumFilter').addEventListener('change', filterGallery);
+    document.getElementById('dateFilter').addEventListener('change', filterGallery);
   </script>
 </body>
 </html>
